@@ -1,7 +1,19 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "puphpet/ubuntu1604-x64"
+  config.vm.box = "puppetlabs/ubuntu-16.04-64-puppet"
+  config.vm.box_version = "1.0.0"
+  config.vm.hostname = "wordpress-template-dev.box"
+  config.vm.network :private_network, ip: "192.168.2.10"
 
-  config.vm.network :private_network, ip: "172.10.0.123", :netmask => "255.255.0.0"
+  # I'll remove this later once I'm sure it's working
+  # config.vm.network :private_network, ip: "172.10.0.123", :netmask => "255.255.0.0"
+
+  config.vm.provider :virtualbox do |vb|
+    vb.customize [
+      "modifyvm", :id,
+      "--cpuexecutioncap", "50",
+      "--memory", "256",
+    ]
+  end
 
   config.vm.provision "shell", path: "_provision/script.sh"
 
