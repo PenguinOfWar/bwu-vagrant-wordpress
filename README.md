@@ -10,4 +10,6 @@ Note: Ubuntu 16.04 seems to not like older versions of Vagrant. This was tested 
 
 ## Install
 
-1. 
+1. `git clone https://github.com/PenguinOfWar/bwu-vagrant-wordpress.git`
+2. `cd bwu-vagrant-wordpress`
+3. `vagrant up`
