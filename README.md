@@ -13,3 +13,7 @@ Note: Ubuntu 16.04 seems to not like older versions of Vagrant. This was tested 
 1. `git clone https://github.com/PenguinOfWar/bwu-vagrant-wordpress.git`
 2. `cd bwu-vagrant-wordpress`
 3. `vagrant up`
+4. Visit `http://192.168.2.10` in your browser
+5. Follow the instructions, your database is called `mysql` and the username and pasword are both `vagrant`
+6. Configure your site details
+7. Done!
